@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Assinantes - Canais de Esporte</title>
+    <link rel="stylesheet" href="_css/estilo.css">
+    <!--1 segundo a mais, quando o cronometro chegar a zero, a página reinicia-->
+    <!--Contente = "181" = segundo-->
+    <meta http-equiv="refresh" content="181">
+</head>
+
+<body onload="soma()">
+
+    <main>
+
+        <div class="formulario">
+            <form name="form" id="form" onsubmit="return validar_tudo();">
+
+                <h1>Formulário <br> <span>(Com verificação)</span></h1>
+                <hr><br><br>
+
+                <div></div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" autocomplete="off">
+                <hr><br>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" autocomplete="off" required class="mascara-cpf">
+                <hr><br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" autocomplete="off">
+                <hr><br>
+
+                <label for="tel">Celular:</label>
+                <input type="text" name="cel" id="cel" autocomplete="off" class="celular">
+                <hr><br>
+
+                <label for="nascimento">Data Nascimento</label>
+                <section class="datanascimento">
+                    <input type="date" name="nascimento" id="nascimento" required autocomplete="off">
+                    <hr><br>
+                </section>
+
+                <label for="sexo">Gênero:</label>
+                <section class="genero">
+
+                    <input type="radio" name="sexo" id="sexo" value="M" checked>Masculino
+                    <input type="radio" name="sexo" id="sexo" value="F">Feminino
+                    <input type="radio" name="sexo" id="sexo" value="O">Outro
+                </section>
+
+                <hr><br>
+
+                <div>
+                    <label for="login">Confirme Login e Senha <br> Para verificar que não é um robô:</label>
+                    <br><br>
+
+                    <section class="registro">
+                        <input type="text" name="login" id="login" autocomplete="off"
+                            placeholder="Digite (Usuario)" maxlength="15" minlength="5" size=22> <br>
+                        <input type="password" name="senha" id="senha" autocomplete="off"
+                            placeholder="Insira (User123#)" maxlength="8" minlength="6" size=22>
+                    </section>
+                </div>
+                <br><br>
+
+                <div class="botao">
+                    <button type="submit" >VALIDAR</button>
+                    <input type="button" name="botao-oculto" id="botao-oculto" value="CONFIRMAR" disabled
+                        onclick="alert('Cadastro efetuado com sucesso!!!');">
+                </div>
+
+            </form>
+        </div>
+        <br>
+    </main>
+
+    <br>
+
+    <!-- SEÇÃO DE LINKS PARA JAVASCRIPT -->
+
+    <!-- Frameworks Jquey -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- Frameworks Jquey Para Validação -->
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <!-- validar (JS / JSON / REGEX) -->
+    <script src="_javascript/form_tools.js"></script>
+    <script src="_javascript/validacao.js"></script>
+
+</body>
+
+</html>
